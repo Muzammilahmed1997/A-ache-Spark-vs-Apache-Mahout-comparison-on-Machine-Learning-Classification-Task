@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+
+  mahout:
+    image: michabirklbauer/mahout:latest
+    container_name: muzcont4
+
+    stdin_open: true
+
+    volumes:
+      - 'E:/Big_Data_Project/mydata:/data/'
+    restart: always
+    ports:
+      - 9000:9000 
+    restart: always
+    
+  mllib:
+    image: jupyter/pyspark-notebook
+    container_name: mycont3
+
+    stdin_open: true
+
+    volumes:
+      - 'E:/Big_Data_Project/mydata:/home/jovyan/data'
+    ports:
+      - 10000:8888
+     
+    restart: always
+
+  
